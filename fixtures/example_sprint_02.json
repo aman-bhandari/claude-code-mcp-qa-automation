@@ -1,0 +1,19 @@
+{
+  "sprint_id": "example_sprint_02",
+  "sprint_name": "BETA_2026_q1_01",
+  "board": "BETA",
+  "start_date": "2026-03-01",
+  "end_date": "2026-03-14",
+  "tickets": [
+    {"key": "BETA-201", "title": "Inventory sync — vendor-side rate limits",      "status": "Done",        "story_points": 5, "assignee": "Dana",    "story_type": "feature"},
+    {"key": "BETA-202", "title": "Order export — pagination beyond 10k rows",     "status": "In Progress", "story_points": 3, "assignee": "Grace",   "story_type": "performance"},
+    {"key": "BETA-203", "title": "Vendor onboarding form — required-field copy",  "status": "Done",        "story_points": 1, "assignee": "Dana",    "story_type": "chore"},
+    {"key": "BETA-204", "title": "Daily reconciliation — missing-invoice alerts", "status": "To Do",       "story_points": 5, "assignee": "Grace",   "story_type": "feature"},
+    {"key": "BETA-205", "title": "Login 2FA — backup-codes rotation",             "status": "Done",        "story_points": 2, "assignee": "Dana",    "story_type": "security"},
+    {"key": "BETA-206", "title": "Background sync — dead-letter queue processor", "status": "Done",        "story_points": 3, "assignee": "Grace",   "story_type": "feature"},
+    {"key": "BETA-207", "title": "PDF invoice — unicode vendor names",            "status": "In Progress", "story_points": 2, "assignee": "Dana",    "story_type": "bug"},
+    {"key": "BETA-208", "title": "Admin audit — export compliance report",        "status": "To Do",       "story_points": 5, "assignee": "Grace",   "story_type": "feature"},
+    {"key": "BETA-209", "title": "Mobile view — payments list viewport overflow", "status": "Done",        "story_points": 1, "assignee": "Dana",    "story_type": "bug"},
+    {"key": "BETA-210", "title": "Dashboard — p99 latency budget enforcement",    "status": "Done",        "story_points": 3, "assignee": "Grace",   "story_type": "performance"}
+  ]
+}

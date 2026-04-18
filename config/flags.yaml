@@ -1,0 +1,49 @@
+# Feature flags for the QA automation pipeline.
+#
+# Every behavior that can be turned on or off lives here. Code reads a flag
+# value at runtime via `src.config.load_flags()` — no hardcoded toggles
+# scattered through the pipeline. This pattern makes it possible to bisect
+# a regression by flipping a single flag without editing code.
+#
+# Flag levels:
+#   - global: applies to all boards/runs
+#   - board-scoped: overrides global for a specific board
+
+global:
+  # Data-collection scope
+  collect_tickets: true
+  collect_ticket_history: true
+  collect_comments: true
+
+  # Enrichment passes
+  link_related_tickets: true
+  infer_story_type_from_title: true
+  detect_stale_tickets: true
+  stale_threshold_days: 14
+
+  # Report generation
+  include_velocity_chart: true
+  include_burndown: true
+  include_stale_list: true
+  max_report_words: 4000
+
+  # Sub-agent orchestration (pipeline → report → deliver → feedback)
+  parallelize_boards: true
+  max_parallel_subagents: 3
+  subagent_timeout_seconds: 300
+
+  # Delivery
+  deliver_to_slack: false  # demo default: dry-run only
+  deliver_to_email: false
+
+# Board-specific overrides. Keys must match team_config.yaml board ids.
+boards:
+  ALPHA:
+    max_report_words: 4000
+    include_burndown: true
+  BETA:
+    max_report_words: 1000
+    include_burndown: true
+  GAMMA:
+    max_report_words: 800
+    include_burndown: false

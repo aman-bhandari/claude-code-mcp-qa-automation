@@ -1,0 +1,30 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editors
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+*.egg-info/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Demo outputs (reproducible from fixtures; do not commit)
+output/
+
+# Local SQLite store (reproduced by the demo)
+*.sqlite3
+*.db

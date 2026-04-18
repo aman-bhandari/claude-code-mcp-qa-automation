@@ -1,0 +1,55 @@
+# Team topology — synthetic roster for the demo.
+#
+# Real clusters would populate this from a human-resource source of truth.
+# The scaffold ships fictional boards and fictional team members.
+
+boards:
+  - id: ALPHA
+    name: "Alpha Board"
+    project_key: ALPHA
+    pm: "Alice"
+    lead: "Bob"
+  - id: BETA
+    name: "Beta Board"
+    project_key: BETA
+    pm: "Charlie"
+    lead: "Dana"
+  - id: GAMMA
+    name: "Gamma Board"
+    project_key: GAMMA
+    pm: "Eve"
+    lead: "Frank"
+
+members:
+  - name: "Alice"
+    role: "product-manager"
+    boards: [ALPHA]
+    is_manager: true
+  - name: "Bob"
+    role: "engineering-lead"
+    boards: [ALPHA]
+    is_manager: true
+  - name: "Charlie"
+    role: "product-manager"
+    boards: [BETA]
+    is_manager: true
+  - name: "Dana"
+    role: "engineering-lead"
+    boards: [BETA]
+    is_manager: true
+  - name: "Eve"
+    role: "product-manager"
+    boards: [GAMMA]
+    is_manager: true
+  - name: "Frank"
+    role: "engineering-lead"
+    boards: [GAMMA]
+    is_manager: true
+  - name: "Grace"
+    role: "engineer"
+    boards: [ALPHA, BETA]
+    is_manager: false
+  - name: "Henry"
+    role: "engineer"
+    boards: [GAMMA]
+    is_manager: false

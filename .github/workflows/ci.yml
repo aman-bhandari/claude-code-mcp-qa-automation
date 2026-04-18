@@ -1,0 +1,41 @@
+name: integrity
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  integrity-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml pytest
+
+      - name: Run integrity check (Gates 0, 4, 5, artifact-specific)
+        run: bash scripts/integrity-check.sh
+
+      - name: Hype-word audit (Gate 1 — advisory)
+        run: |
+          set -e
+          hits=$(grep -riE \
+            'production-ready|production-grade|enterprise-grade|best-in-class|world-class|state-of-the-art|cutting-edge|battle-tested|seamless|seamlessly' \
+            --include='*.md' \
+            --exclude-dir=.git \
+            . || true)
+          if [ -n "$hits" ]; then
+            echo "Hype words found:"
+            echo "$hits"
+            exit 1
+          fi
+          echo "No hype words in public docs"

@@ -1,0 +1,29 @@
+{
+  "sprint_id": "example_sprint_01",
+  "sprint_name": "ALPHA_0.3.2",
+  "board": "ALPHA",
+  "start_date": "2026-03-01",
+  "end_date": "2026-03-14",
+  "tickets": [
+    {"key": "ALPHA-101", "title": "Sign-in flow — email validation regex",       "status": "Done",        "story_points": 2, "assignee": "Grace",  "story_type": "bug"},
+    {"key": "ALPHA-102", "title": "Checkout API — idempotency key enforcement",   "status": "Done",        "story_points": 5, "assignee": "Bob",    "story_type": "feature"},
+    {"key": "ALPHA-103", "title": "Dashboard chart — zero-state copy",            "status": "Done",        "story_points": 1, "assignee": "Grace",  "story_type": "chore"},
+    {"key": "ALPHA-104", "title": "Background job — retry with exponential backoff","status": "In Progress","story_points": 3, "assignee": "Bob",   "story_type": "feature"},
+    {"key": "ALPHA-105", "title": "Audit log — column index for ticket lookups",  "status": "In Progress", "story_points": 2, "assignee": "Grace",  "story_type": "performance"},
+    {"key": "ALPHA-106", "title": "Password reset email — expiry token rotation", "status": "Done",        "story_points": 3, "assignee": "Bob",    "story_type": "security"},
+    {"key": "ALPHA-107", "title": "Onboarding tooltip — first-session visibility","status": "To Do",       "story_points": 1, "assignee": "Grace",  "story_type": "feature"},
+    {"key": "ALPHA-108", "title": "Feature flag — dark-mode rollout gate",        "status": "Done",        "story_points": 2, "assignee": "Bob",    "story_type": "chore"},
+    {"key": "ALPHA-109", "title": "Incident postmortem — session-cookie leak",    "status": "Done",        "story_points": 5, "assignee": "Bob",    "story_type": "bug"},
+    {"key": "ALPHA-110", "title": "API rate-limit — per-tenant quota",            "status": "To Do",       "story_points": 8, "assignee": "Grace",  "story_type": "feature"},
+    {"key": "ALPHA-111", "title": "CI pipeline — flaky test quarantine policy",   "status": "In Progress", "story_points": 3, "assignee": "Bob",    "story_type": "chore"},
+    {"key": "ALPHA-112", "title": "Search — typo tolerance on short queries",     "status": "Done",        "story_points": 5, "assignee": "Grace",  "story_type": "feature"},
+    {"key": "ALPHA-113", "title": "Export CSV — unicode filename handling",       "status": "Done",        "story_points": 2, "assignee": "Grace",  "story_type": "bug"},
+    {"key": "ALPHA-114", "title": "Billing — proration on mid-cycle upgrades",    "status": "To Do",       "story_points": 8, "assignee": "Bob",    "story_type": "feature"},
+    {"key": "ALPHA-115", "title": "Email — unsubscribe link regeneration",        "status": "Done",        "story_points": 1, "assignee": "Grace",  "story_type": "chore"},
+    {"key": "ALPHA-116", "title": "Observability — span propagation across queues","status":"In Progress", "story_points": 5, "assignee": "Bob",    "story_type": "performance"},
+    {"key": "ALPHA-117", "title": "Account deletion — GDPR data retention policy","status": "To Do",       "story_points": 3, "assignee": "Grace",  "story_type": "security"},
+    {"key": "ALPHA-118", "title": "Slow-query log — top-10 endpoint baseline",    "status": "Done",        "story_points": 2, "assignee": "Bob",    "story_type": "performance"},
+    {"key": "ALPHA-119", "title": "Admin console — bulk-action audit trail",      "status": "In Progress", "story_points": 3, "assignee": "Grace",  "story_type": "feature"},
+    {"key": "ALPHA-120", "title": "Timezone — DST transition in scheduling logic","status": "Done",        "story_points": 5, "assignee": "Bob",    "story_type": "bug"}
+  ]
+}
