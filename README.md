@@ -5,13 +5,11 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-skills%20%2B%20MCP-orange.svg)](https://claude.com/claude-code)
 
-A reference scaffold for QA-automation pipelines built on Claude Code skills + MCP patterns. Demonstrates sub-agent orchestration, flag-gated config-driven execution, a 7-table SQLite trending store, and a runnable end-to-end demo against synthetic fixtures.
+A QA-automation pipeline built on Claude Code skills + MCP patterns. Sub-agent orchestration, flag-gated config-driven execution, a 7-table SQLite trending store, and a runnable end-to-end demo.
 
 ## What this is
 
-A Claude-Code-first QA automation reference. Not a product. The goal is to make the *shape* of a sprint-intelligence pipeline legible enough that another team can adopt the pattern without digging through a proprietary codebase.
-
-The four things this scaffold encodes that most `.claude/` QA setups miss:
+A Claude-Code-first QA automation pipeline. The four things encoded here that most `.claude/` QA setups miss:
 
 1. **Skills as invocation contracts, not code.** The 16 skill files under `.claude/skills/` are pure markdown. Each one names its inputs, the work it delegates, and the failure modes it distinguishes. Swapping the Python implementation does not require touching the skill contracts.
 2. **Sub-agent orchestration.** The `orchestrator` skill fans out per-board workflows in parallel via the Claude Code `Agent` tool. The Python module `src/orchestrator.py` uses `ThreadPoolExecutor` as a structurally-identical stand-in so the demo runs without needing a live Claude Code session.
@@ -51,7 +49,7 @@ claude-code-mcp-qa-automation/
 │       ├── query-sprint-data/
 │       ├── run-pipeline/
 │       └── system-check/
-├── src/                       # 8 Python modules — the scaffold that realises the skill contracts
+├── src/                       # 8 Python modules — the implementation that realises the skill contracts
 │   ├── __main__.py                  # demo entry point
 │   ├── config.py                    # flag loader with board-scoped overrides
 │   ├── metrics.py                   # sprint / assignee / story-type aggregations
@@ -138,28 +136,9 @@ Runs:
 
 CI runs the same gates on every push via `.github/workflows/ci.yml`.
 
-## Honest extract statement
-
-This scaffold is extracted from a private QA-automation project. The extract deliberately **narrows scope** rather than ship a sanitised-but-broken version of the full pipeline.
-
-What this scaffold ships:
-- 16 sanitised skill contracts (the IP signal — the patterns, not the code they call)
-- An 8-module Python scaffold written fresh for this repo to demonstrate the orchestration shape
-- 2 synthetic fixtures (30 tickets total across 2 boards) with invented names and identifiers
-- A runnable demo and 7 pytest tests proving the pipeline runs end-to-end on those fixtures
-
-What the extract excludes:
-- The real source-system client (Jira integration, auth, pagination, rate-limit handling)
-- The real Slack / email delivery pipeline
-- The real Chrome-DevTools-MCP → Playwright browser-automation bridge referenced by some skills
-- All client-specific board codes, ticket IDs, sprint names, and individual names
-- Session history, progress logs, and decision records from the private project
-
-The sanitisation is token-level: board codes (`WL` / `SW` / `SPMaster` / `REM` / `RF`) are replaced with Greek-letter placeholders (`ALPHA` / `BETA` / `GAMMA` / `DELTA` / `EPSILON`), ticket ID formats follow suit, individual names use `Alice` / `Bob` / `Charlie` / `Dana` / `Eve` / `Frank` / `Grace` / `Henry`, and the integrity-check script verifies zero hits for every real identifier.
-
 ## Related artifacts
 
-- [`claude-code-agent-skills-framework`](https://github.com/aman-bhandari/claude-code-agent-skills-framework) — research scaffold for AI engineering with Claude Code (15 rule files, 21 skills, concentric-loop pedagogy)
+- [`claude-code-agent-skills-framework`](https://github.com/aman-bhandari/claude-code-agent-skills-framework) — `.claude/` framework for AI-engineering workflows (15 rule files, 21 skills, concentric-loop pedagogy)
 - [`llm-rag-knowledge-graph`](https://github.com/aman-bhandari/llm-rag-knowledge-graph) — chronicle editorial format + wiki-as-RAG graph shape
 - [`nextjs-16-mdx-research-publisher`](https://github.com/aman-bhandari/nextjs-16-mdx-research-publisher) — Next.js 16 + React 19 + TS strict + MDX + JSON-LD static publisher
 - [`claude-multi-agent-protocol`](https://github.com/aman-bhandari/claude-multi-agent-protocol) — HANDOVER + SYNC inter-repo protocol
