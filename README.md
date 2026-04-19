@@ -1,5 +1,10 @@
 # claude-code-mcp-qa-automation
 
+[![CI](https://github.com/aman-bhandari/claude-code-mcp-qa-automation/actions/workflows/ci.yml/badge.svg)](https://github.com/aman-bhandari/claude-code-mcp-qa-automation/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-skills%20%2B%20MCP-orange.svg)](https://claude.com/claude-code)
+
 A reference scaffold for QA-automation pipelines built on Claude Code skills + MCP patterns. Demonstrates sub-agent orchestration, flag-gated config-driven execution, a 7-table SQLite trending store, and a runnable end-to-end demo against synthetic fixtures.
 
 ## What this is
